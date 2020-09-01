@@ -1,3 +1,76 @@
+polySphere -radius 3 -subdivisionsX 20 -subdivisionsY 20 -axis 0 2 0 -createUVs 2 -constructionHistory 1;
+move -r 0 2.879033 0 ;
+
+polySphere -radius 2 -subdivisionsX 20 -subdivisionsY 20 -axis 0 2 0 -createUVs 2 -constructionHistory 1;
+move -r 0 6.5 0 ;
+
+polySphere -radius 1.5 -subdivisionsX 20 -subdivisionsY 20 -axis 0 2 0 -createUVs 2 -constructionHistory 1;
+move -r 0 9 0 ;
+
+polySphere -radius 1 -subdivisionsX 20 -subdivisionsY 20 -axis 0 1 0 -createUVs 2 -constructionHistory 1;
+move -r 0 9.163814 0 ;
+move -r 0.528322 0 0.825507 ;
+scale -r 0.362461 0.362461 0.362461 ;
+move -r 0.221333 0 0.54742 ;
+move -r -0.247672 0 -0.208529 ;
+move -r 0.338626 0 -0.153101 ;
+
+polySphere -radius 1 -subdivisionsX 20 -subdivisionsY 20 -axis 0 1 0 -createUVs 2 -constructionHistory 1;
+move -r 0 9.163814 0 ;
+move -r 0.528322 0 0.825507 ;
+scale -r 0.362461 0.362461 0.362461 ;
+move -r 0.221333 0 0.54742 ;
+move -r -0.247672 0 -0.208529 ;
+move -r 0.338626 0 -0.153101 ;
+move -r -1.741549 0 0 ;
+move -r 0.103758 0 0 ;
+
+polyCone -radius 1 -h 2 -subdivisionsX 20 -subdivisionsY 8 -subdivisionsZ 0 -axis 0 1 0 -roundCap 0 -createUVs 3 -constructionHistory 1;
+move -r 0 9.507114 0 ;
+rotate -r -os -fo 89.547522 0 0 ;
+scale -r 0.263826 0.263826 0.263826 ;
+scale -r 1 3.184637 1 ;
+move -r 0 0 2.117668 ;
+move -r 0 -0.636675 0 ;
+select -r pCone1.vtx[80:99] ;
+move -r 0 0.0715298 0 ;
+select -r pCone1.vtx[120:139] ;
+move -r 0 -0.0684318 0 ;
+
+polyCylinder -r 1 -h 2 -sx 20 -sy 5 -sz 1 -ax 0 1 0 -rcp 0 -cuv 3 -ch 1;
+scale -r 1.2108 1.2108 1.2108 ;
+move -r 0 10.568624 0 ;
+select -r pCylinder1.vtx[60:79] ;
+softSelect -softSelectEnabled true -ssd 1.318254 -sud 0.5 ;
+scale -r -p -1.19209e-07cm 10.768624cm -1.78814e-07cm 0.834942 0.834942 0.834942 ; 
+scale -r -p -1.19209e-07cm 10.768624cm -1.78814e-07cm 0.768919 0.768919 0.768919 ;
+
+polyCylinder -r 1 -h 2 -sx 20 -sy 1 -sz 1 -ax 0 1 0 -rcp 0 -cuv 3 -ch 1;
+move -r 0 9.833372 0 ;
+scale -r 1 0.0853655 1 ;
+scale -r 1.638305 1.638305 1.638305 ;
+move -r 0 0.23235 0 ;
+
+polySphere -r 1 -sx 20 -sy 20 -ax 0 1 0 -cuv 2 -ch 1;
+move -r 0 6.775463 0 ;
+move -r 0 0 1.177797 ;
+scale -r 0.560494 0.560494 0.560494 ;
+move -r 0 0 0.439316 ;
+duplicate -rr;
+move -r 0 -2.341215 0 ;
+move -r 0 0 0.575035 ;
+move -r 0 0 0.210143 ;
+duplicate -rr;
+move -r 0 -1.632024 0 ;
+move -r 0 0 0.474288 ;
+
+polyCylinder -r 1 -h 2 -sx 20 -sy 1 -sz 1 -ax 0 1 0 -rcp 0 -cuv 3 -ch 1;
+scale -r 0.198856 0.198856 0.198856 ;
+scale -r 1 8.15698 1 ;
+move -r 0 7.474997 0 ;
+rotate -r -os -fo 0 0 -66.344921 ;
+move -r 2.888957 0 0 ;
+
 polyCylinder -r 1 -h 2 -sx 20 -sy 1 -sz 1 -ax 0 1 0 -rcp 0 -cuv 3 -ch 1;
 scale -r 0.198856 0.198856 0.198856 ;
 scale -r 1 8.15698 1 ;
