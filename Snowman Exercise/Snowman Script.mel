@@ -1,0 +1,12 @@
+polyCylinder -r 1 -h 2 -sx 20 -sy 1 -sz 1 -ax 0 1 0 -rcp 0 -cuv 3 -ch 1;
+scale -r 0.198856 0.198856 0.198856 ;
+scale -r 1 8.15698 1 ;
+move -r 0 7.474997 0 ;
+rotate -r -os -fo 0 0 -66.344921 ;
+move -r 2.888957 0 0 ;
+rotate -r -ws -fo 0 -122.764575 0 ;
+rotate -r -ws -fo 0 -55.228151 0 ;
+rotate -r -ws -fo 0 0 21.415444 ;
+move -r -5.915262 0 0 ;
+rotate -r -ws -fo 0 0 34.468141 ;
+move -r 0 -1.428963 0 ;
