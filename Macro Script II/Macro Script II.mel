@@ -1,0 +1,55 @@
+polySphere -r 1 -sx 20 -sy 20 -ax 0 1 0 -cuv 2 -ch 1;
+select -tgl pSphere1.f[280:359];
+select -tgl pSphere1.f[380:399]; 
+polyExtrudeFacet -constructionHistory 1 -keepFacesTogether 1 -pvx -8.940696716e-08 -pvy 0.8535533845 -pvz -1.490116119e-07 -divisions 1 -twist 0 -taper 1 -off 0 -thickness 0 -smoothingAngle 30 pSphere1.f[280:359] pSphere1.f[380:399];
+setAttr "polyExtrudeFace1.pivot" -type double3 -8.9407e-08 2.083861 -1.49012e-07 ;
+setAttr "polyExtrudeFace1.translate" -type double3 0 1.230306 0 ;
+select -d pSphere1.f[280:359] pSphere1.f[380:399] ;
+move -r 0 1.036613 0 ;
+scale -r 1 2.573038 1 ;
+move -r 0 -2.767165 0 ;
+
+polyCube -w 1 -h 1 -d 1 -sx 1 -sy 1 -sz 1 -ax 0 1 0 -cuv 4 -ch 1;
+move -r 0 3.551675 0 ;
+select -r pCube1 ;
+scale -r 1 1 4.517926 ;
+scale -r 1.681389 1 1 ;
+
+select -r pCube1 ;
+duplicate -rr;
+move -r 0 0.87582 0 ;
+scale -r 1 8.332506 1 ;
+scale -r 1 2.299153 1 ;
+move -r 0 9.081362 0 ;
+select -r pCube2.vtx[2:5] ;
+scale -r -p 0cm 23.087709cm 0cm 0.265565 1 1 ;
+scale -r -p 0cm 23.087709cm 0cm 1 1 0.175099 ;
+select -r pCube2.e[5] ;
+select -tgl pCube2.e[4] ;
+select -tgl pCube2.e[9] ;
+select -tgl pCube2.e[8] ;
+polyBevel3 -fraction 0.5 -offsetAsFraction 1 -autoFit 1 -depth 1 -mitering 0 -miterAlong 0 -chamfer 1 -segments 1 -worldSpace 1 -smoothingAngle 30 -subdivideNgons 1 -mergeVertices 1 -mergeVertexTolerance 0.0001 -miteringAngle 180 -angleTolerance 180 -ch 1 pCube2.e[4:5] pCube2.e[8:9];
+setAttr "polyBevel1.fraction" 1;
+
+rename "pSphere1" "Handle";
+rename "pCube1" "Guard";
+rename "pCube2" "Blade";
+
+select -r Blade Handle Guard ;
+
+polyUnite -ch 1 -mergeUVSets 1 -centerPivot -name Blade Blade Handle Guard;
+
+select -r Blade1 ;
+rename "Blade1" "Knife";
+
+doGroup 0 1 1;
+select -r group1 ;
+rename "group1" "Geometry";
+
+select -r Handle Guard Blade ;
+parent Handle Geometry ; 
+parent Guard Geometry ; 
+parent Blade Geometry ;
+
+
+
