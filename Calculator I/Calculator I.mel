@@ -1,0 +1,14 @@
+proc float Add(float $numbers[])
+{
+    float $sum = 0;
+    
+    for ($i=0; $i<size($numbers); $i++)
+    {
+        $sum += $numbers[$i];
+    }
+    
+    return $sum;
+}
+
+int $answer = Add({3,7,10,22});
+print $answer;
