@@ -1,3 +1,4 @@
+//Addition
 proc float Add(float $numbers[])
 {
     float $sum = 0;
@@ -10,5 +11,159 @@ proc float Add(float $numbers[])
     return $sum;
 }
 
-int $answer = Add({3,7,10,22});
-print $answer;
+int $AddAnswer = Add({3,7,10,22});
+print $AddAnswer;
+
+//Subtraction
+proc float Subtract(float $numbers[])
+{
+    float $difference = 80;
+    
+    for ($i=0; $i<size($numbers); $i++)
+    {
+          $difference -= $numbers[$i];          
+    }
+    
+    return $difference;
+}
+
+int $SubtractAnswer = Subtract({30,10,3,2});
+print $SubtractAnswer;
+
+//Multiplication
+proc float Multiply(float $numbers[])
+{
+    float $multiplied = 1;
+    
+    for ($i=0; $i<size($numbers); $i++)
+    {
+         $multiplied *= $numbers[$i];           
+    }
+    
+    return $multiplied;
+}
+
+int $MultiplyAnswer = Multiply({5,5,5,5});
+print $MultiplyAnswer;
+
+//Division
+proc float Divide(float $numbers[])
+{
+    float $division = 100;
+    
+    for ($i=0; $i<size($numbers); $i++)
+    {
+         $division /= $numbers[$i];           
+    }
+    
+    return $division;
+}
+
+int $DivideAnswer = Divide({2,5,5});
+print $DivideAnswer;
+
+//To the Power
+proc float Power(int $base, int $exponent)
+{
+    float $number = $base;
+    
+    for ($i=1; $i<$exponent; $i++)
+    {
+         $number = $number*$base;           
+    }
+    
+    return $number;
+}
+
+int $ExpAnswer = Power(4,3);
+print $ExpAnswer;
+
+//Mean/Average
+proc float Mean(float $numbers[])
+{
+        float $mean = 0;
+        
+        for ($i=0; $i<size($numbers); $i++)
+        {
+             $mean += $numbers[$i];        
+        }
+        
+        $mean = $mean / `size($numbers)`; //take the sum of the numbers and divide by the size of numbers array
+        
+        return $mean;
+}
+
+int $MeanAnswer = Mean({5,6,9,7,6,3,1,3});
+print $MeanAnswer;
+
+//Median
+proc float Median(float $numbers[])
+{    
+    float $medianNum;
+    int $middleNum = size($numbers)/2;
+    
+    for ($i=0; $i<size($numbers); $i++)
+    {        
+        if (size($numbers)%2 == 0)
+        {
+            $medianNum = ($numbers[$middleNum - 1] + $numbers[$middleNum]) / 2;
+        }
+        
+        else
+        {
+            $medianNum = $numbers[$middleNum];
+        }         
+           
+    }
+    
+    return $medianNum;
+    //return $numbers[2]/1.3;
+}
+
+float $MedianAnswer = Median({2,4,6,11,17,20});
+print $MedianAnswer;
+
+//Mode
+proc float Mode(float $numbers[])
+{
+    float $values[];
+    float $frequency[];
+    
+    for ($i=0; $i<size($numbers); $i++)
+    {
+        if (!floatArrayContains($numbers[$i], $values))
+        {
+            $values[size($values)] = $numbers[$i];
+            $frequency[size($values)] = 1;
+        }
+        else
+        {
+            // values == [3,5,2,87,4,56]
+            // freq   == [1,3,2, 1,1, 1]
+            int $index;
+            $index = floatArrayFind($numbers[$i], 0, $values); //find index number in the values array to increment its frequency
+            $frequency[$index] = $frequency[$index] + 1; //add 1 to the frequency of number in value array
+        }
+    }
+    
+    int $maxIndex;
+    $maxIndex = 0;
+    
+    for ($i=1; $i<size($frequency); $i++) // Loop through frequency[] to find largest value
+    {
+        if($frequency[$i]>$frequency[$maxIndex])
+        {
+            $maxIndex = $i;     // Get the index of the said value
+        }
+    }
+    
+    
+
+
+
+
+    return $values[$maxIndex];         // Get associated value from $values[] Return as the mode
+}
+
+float $ModeAnswer = Mode({3,5,2,87,5,4,56,2,5});
+print $ModeAnswer;
