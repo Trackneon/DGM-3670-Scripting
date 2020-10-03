@@ -1,0 +1,58 @@
+global proc float Calculator(float $numbers[], string $operation)
+{
+
+	//$numbers = {35,7,2,65,2}
+	
+	return Addition($numbers);
+
+}
+
+Calculator({35,7,2,65,2}, "add")
+
+proc Addition(float $input[])
+{
+	//$input = {35,7,2,65,2}
+	print (35 + 7 + 2 + 65 + 2 = 111);
+
+//if operation type is "add"
+	//-Call function Addition($numbers[])
+
+//else if operation type is "mean"
+	//Call function Mean
+	
+//else if operation type is "mean"
+	//Call function Mean	
+	
+	
+proc float Add(float $nums[])
+{
+
+	float $sum;
+	string $operation = "";
+
+	for ($n in $nums)
+	{
+		$sum += $n;
+		
+		if($operation == "")
+		{
+			$operation = $n;
+		}
+		
+		else
+		{
+			$operation = $operation + " + " + $n;
+		{
+		
+		//$sum == 41
+		//$operation == "2 + 3 + 5 + 6 + 7 + 8"
+		$operation = $operation + " = " + $sum;
+		//$operation == "2 + 3 + 5 + 6 + 7 + 8 = 41"		
+	}	
+	
+	print ($operation);
+
+	return $sum;
+}
+
+Add({2,3,5,6,7,8});
