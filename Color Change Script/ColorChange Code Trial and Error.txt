@@ -1,0 +1,69 @@
+proc ColorChange() 
+{
+    string $name1 = "nurbsCircleShape5.overrideEnabled";
+    string $name2 = "nurbsCircleShape5.overrideColor";
+    string $name = "Tyler";
+    string $select[];// = "there"; //= `ls -sl`;
+    $select[0] = "there";
+    string $objects[] = `ls -sl`;
+    string $shapes[] = `listRelatives -shapes $objects[0]`;
+    int $i = 4;
+    string $name3 = $shapes[0] + ".overrideEnabled";
+    print $name3;
+    setAttr $name1 1;
+    setAttr $name2 12;
+    print ("hi");
+    print $name;
+    print $select[0];
+    print $objects[0];
+
+    return;  
+} 
+ColorChange();
+
+//New and working code Below
+
+proc ColorChange() 
+{
+    //string $name1 = "nurbsCircleShape5.overrideEnabled";
+    //string $name2 = "nurbsCircleShape5.overrideColor";
+    //string $name = "Tyler";
+    //string $select[];// = "there"; //= `ls -sl`;
+    //$select[0] = "there";
+    //int $i = 3;
+    string $objects[] = `ls -sl`;
+    for ($i=0; $i<size($objects); $i++)
+    {
+         print ($i + " " + $objects[$i] + "\n"); 
+    
+
+    string $shapes[] = `listRelatives -shapes $objects[$i]`;
+    //int $i = 4;
+    string $name3 = $shapes[0] + ".overrideEnabled";
+    string $name4 = $shapes[0] + ".overrideColor";
+    print ($name3 + "\n");
+    setAttr $name3 1;
+    setAttr $name4 ($i + 18);
+    //print ("hi");
+    //print $name;
+    //print $select[0];
+    //print $objects[$i];
+    }
+    
+    /*string $objects[] = `ls -sl`;
+    string $shapes[];
+    int $objectSize = size($objects);
+    print $objectSize;
+        for ($i=0; $i<size($objects); $i++)
+        {
+            print $i;
+            $shapes[] = `listRelatives -shapes $objects[0]`; 
+            print $shapes[0];
+        }*/
+        
+    
+    
+
+    return;  
+} 
+ColorChange();

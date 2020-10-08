@@ -1,0 +1,23 @@
+proc ColorChange() 
+{
+    string $objects[] = `ls -sl`;
+    for ($i=0; $i<size($objects); $i++)
+    {
+        print ($i + " " + $objects[$i] + "\n");
+          
+        string $shapes[] = `listRelatives -shapes $objects[$i]`;
+        
+        string $name1 = $shapes[0] + ".overrideEnabled";
+        string $name2 = $shapes[0] + ".overrideColor";
+        
+        print ($name1 + "\n");
+        
+        setAttr $name1 1;
+        setAttr $name2 ($i + 18);
+    }
+   
+    return;  
+} 
+ColorChange();
+
+
