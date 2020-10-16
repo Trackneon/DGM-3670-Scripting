@@ -1,0 +1,33 @@
+proc RandomDuplicate()
+{
+        int $duplicates = 2;
+        
+        float $minX = -20, $maxX = 20, $minY = -20, $maxY = 20, $minZ = -20, $maxZ = 20;
+        
+        string $objects[] = `ls -sl`;
+        
+        //int $j = 1;
+        
+        for ($o in $objects)
+        {
+           
+            
+            for ($i=0; $i<$duplicates; $i++)
+            {
+                duplicate $o;
+                
+                float $randX = `rand $minX $maxX`;
+                float $randY = `rand $minY $maxY`;
+                float $randZ = `rand $minZ $maxZ`;
+                
+                xform -objectSpace -translation $randX $randY $randZ $o; 
+            }
+            
+            //print ($j + "\n");
+            //$j++;
+        }
+        
+        return;
+      
+}
+RandomDuplicate();
