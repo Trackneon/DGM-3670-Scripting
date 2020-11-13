@@ -20,4 +20,4 @@ for o in objects:
                   objectCopy,
                   relative=1,
                   objectSpace=1,
-                  worldSpaceDistance=1) 
+                  worldSpaceDistance=1)
