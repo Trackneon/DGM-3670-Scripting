@@ -22,7 +22,7 @@ class RenamerToolboxUI():
 
         cmds.button(parent=self.col_layout, label='Sphere', c=lambda *x: self.createSphere())
         cmds.button(parent=self.col_layout, label='Cube', c=lambda *x: self.createCube())
-        cmds.button(parent=self.col_layout, label='Torus', c=lambda *x: self.createTorus())
+        # cmds.button(parent=self.col_layout, label='Torus', c=lambda *x: self.createTorus())
         cmds.button(parent=self.col_layout, label='Print Field',
                     c='print cmds.textField(name_field, q=true, text=True)')
         cmds.button(parent=self.col_layout, label='Sequential Renamer', c=lambda *x: self.call_renamer())
@@ -44,8 +44,8 @@ class RenamerToolboxUI():
         size_value = cmds.intSliderGrp(self.size_slider, q=True, value=True)
         cmds.polyCube(name=field_value, width=size_value, height=size_value, depth=size_value)
 
-    def createTorus(self):
-        pass
+    # def createTorus(self):
+    #     pass
 
     def call_renamer(selfs):
         import SequentialRenaming
