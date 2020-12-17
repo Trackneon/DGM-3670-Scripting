@@ -30,7 +30,12 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="preferences.editor" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\UVU\Fall 2020\DGM 3670\Git Repo\DGM 3670 Scripting\Python Scripts\my_tools" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -69,6 +74,9 @@
       <workItem from="1607047667492" duration="4967000" />
       <workItem from="1607564186753" duration="667000" />
       <workItem from="1607564885409" duration="891000" />
+      <workItem from="1608057413303" duration="6768000" />
+      <workItem from="1608133576879" duration="14138000" />
+      <workItem from="1608220338348" duration="1263000" />
     </task>
     <servers />
   </component>
